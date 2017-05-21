@@ -6,12 +6,10 @@
   // code that used to be in index.html.
   // Also be sure to hide all the main section elements, and reveal the #articles section:
   articleController.initArticlePage = function () {
-        console.log('initarticlepage');
 
     Article.fetchAll(articleView.initIndexPage);
     $('.tab-content').hide();
     $('#articles').fadeIn();
-    console.log('showarticles')
   }
 
 

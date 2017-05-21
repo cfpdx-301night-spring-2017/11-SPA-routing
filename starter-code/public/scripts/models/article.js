@@ -17,14 +17,9 @@
     return template(this);
   };
 
-    console.log('article.all', + Article.all);
-
-    console.log('beforeloadall');
-
   Article.loadAll = rows => {
     rows.sort((a,b) => (new Date(b.publishedOn)) - (new Date(a.publishedOn)));
     Article.all = rows.map(ele => new Article(ele));
-    console.log('loadall');
   };
 
   Article.fetchAll = callback => {
@@ -33,7 +28,6 @@
       results => {
         Article.loadAll(results);
         callback();
-            console.log('fetchall');
       }
     )
   };
